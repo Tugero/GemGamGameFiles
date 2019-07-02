@@ -1,0 +1,33 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PouchBagsController : MonoBehaviour
+{
+    private int score =0;
+    public GameObject ScorePouch;
+    private void Start()
+    {
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Red Gem" && gameObject.name == "Red Pouch")
+        {
+            score = score + 10;
+            ScorePouch.GetComponent<GameController>().TotalScore += score;
+        }
+        if (other.tag == "Green Gem" && name == "Green Pouch")
+        {
+            score = score + 50;
+            ScorePouch.GetComponent<GameController>().TotalScore += score;
+        }
+        if (other.tag == "Blue Gem" && name == "Blue Pouch")
+        {
+            score = score + 100;
+            ScorePouch.GetComponent<GameController>().TotalScore += score;
+        }
+        //ScorePouch.GetComponent<GameController>().TotalScore += score;
+        Destroy(other.gameObject);
+    }
+}

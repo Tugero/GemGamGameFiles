@@ -1,0 +1,16 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GemsController : MonoBehaviour
+{
+    private void Start()
+    {
+        transform.Rotate(180f,0f,90f,0f);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject, 1);
+    }
+}

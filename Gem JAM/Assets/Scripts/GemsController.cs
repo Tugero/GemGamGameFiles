@@ -13,7 +13,7 @@ public class GemsController : MonoBehaviour
 
     private void Update()
     {
-        slowfall.AddForce(new Vector3(0, 10, 0));
+        slowfall.AddForce(new Vector3(0, 9, 0));
     }
     private void OnCollisionEnter(Collision collision)
     {

@@ -19,5 +19,9 @@ public class GameController : MonoBehaviour
     {
         if (Score != null)
         Score.text = "Score: " + TotalScore;
+        if (Input.GetKey("Escape"))
+        {
+            Application.Quit();
+        }
     }
 }
