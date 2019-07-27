@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{4555EE83-FA37-5AA0-475E-E98B9558B3BA}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Simon Scripts/Sayer.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Bounty Scripts/BountyPuzzle.cs" Line="40" Column="9" />
+      <File FileName="Assets/Scripts/Bounty Scripts/BountySlots.cs" Line="13" Column="36" />
+      <File FileName="Assets/Scripts/GodScript.cs" Line="78" Column="29" />
+      <File FileName="Assets/Scripts/Simon Scripts/SimonController.cs" Line="17" Column="5" />
+      <File FileName="Assets/Scripts/Simon Scripts/Sayer.cs" Line="9" Column="26" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
