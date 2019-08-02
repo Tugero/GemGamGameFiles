@@ -13,10 +13,13 @@ public class SimonSlots : MonoBehaviour
     public SimonController Overlord;
     private bool locked = false;
     public int SlotID;
+    public AudioSource SoundPlayer;
+    public AudioClip Sound;
 
     void Start()
     {
         Overlord = GameObject.Find("Simon Say's Puzzle").GetComponent<SimonController>();
+        SoundPlayer.clip = Sound;
     }
 
     void Update()
@@ -35,6 +38,7 @@ public class SimonSlots : MonoBehaviour
         {
             Overlord.SlotCounter += 1;
             RedGem.SetActive(true);
+            SoundPlayer.Play();
             locked = true;
             if (SlotID == 1)
             {
@@ -46,6 +50,7 @@ public class SimonSlots : MonoBehaviour
         {
             Overlord.SlotCounter += 1;
             GreenGem.SetActive(true);
+            SoundPlayer.Play();
             locked = true;
             if (SlotID == 2)
             {
@@ -57,6 +62,7 @@ public class SimonSlots : MonoBehaviour
         {
             Overlord.SlotCounter += 1;
             BlueGem.SetActive(true);
+            SoundPlayer.Play();
             locked = true;
             if (SlotID == 3)
             {

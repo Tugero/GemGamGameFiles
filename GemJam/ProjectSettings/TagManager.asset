@@ -10,6 +10,8 @@ TagManager:
   - Coin
   - F2B
   - Death Coin
+  - Yes
+  - No
   layers:
   - Default
   - TransparentFX

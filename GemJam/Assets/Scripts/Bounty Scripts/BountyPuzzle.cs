@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BountyPuzzle : MonoBehaviour
 {
+    public bool win;
     public int RedCost =5;
     public int GreenCost =50;
     public int BlueCost = 100;
@@ -21,11 +22,17 @@ public class BountyPuzzle : MonoBehaviour
     public Animator Crusher;
     public Animator MovingSwitches;
     public Animator DoorFall;
+    public Animator Gate;
     public GodScript God;
     public GameObject Self;
+    public AudioSource SoundPlayer;
+    public AudioClip Sound;
+
 
     void Start()
     {
+        if (Gate != null)
+            Gate.speed = 0;
         if (DoorFall != null)
         DoorFall.speed = 0;
         array = new int[3];
@@ -50,12 +57,19 @@ public class BountyPuzzle : MonoBehaviour
 
         if (PlayerAnswer == TotalCost && SlotsUsed ==4)
         {
+            if (SoundPlayer.clip.name != "Win")
+            {
+                SoundPlayer.clip = Sound;
+                SoundPlayer.Play();
+            }
+            if (Gate != null)
+                Gate.SetFloat("Reverse", -2);
             //Door.SetActive(false);
             Crusher.speed = 0;
             MovingSwitches.speed = 0;
             if (DoorFall != null)
                 DoorFall.speed = 1;
-            God.LevelsCompleted += 1;
+            //God.LevelsCompleted += 1;
         }
         if (PlayerAnswer < TotalCost && SlotsUsed == 4)
         {
@@ -64,6 +78,18 @@ public class BountyPuzzle : MonoBehaviour
         if (PlayerAnswer > TotalCost && SlotsUsed == 4)
         {
             Targetnumber.text = "Your answer was too High!";
+        }
+        if (win == true)
+        {
+            if (SoundPlayer.clip.name != "Win")
+            {
+                SoundPlayer.clip = Sound;
+                SoundPlayer.Play();
+            }
+            Gate.SetFloat("Reverse", -2);
+            Crusher.speed = 0;
+            MovingSwitches.speed = 0;
+            DoorFall.speed = .5f;
         }
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GridPuzzleController : MonoBehaviour
 {
+    public bool win;
     public int Correctkeys;
     public Animator DoorFall;
     public GodScript God;
@@ -21,6 +22,10 @@ public class GridPuzzleController : MonoBehaviour
     public GameObject Fire4;
     public Animator Light;
     public GameObject LightObj;
+    public GameObject Blocker;
+    public AudioSource SoundPlayer;
+    public AudioClip Sound;
+
 
     private void Start()
     {
@@ -46,14 +51,29 @@ public class GridPuzzleController : MonoBehaviour
     {
         if (Correctkeys == 4)
         {
-            DoorFall.speed = .1f;
+            if (SoundPlayer.clip.name != "Win")
+            {
+                SoundPlayer.clip = Sound;
+                SoundPlayer.Play();
+            }
+            DoorFall.speed = .5f;
             if (Darkness != null)
             Darkness.SetFloat("Reverse",-2);
             if (Light != null)
             {
                 LightObj.SetActive(true);
                 Light.speed = 1;
+                Blocker.SetActive(false);
             }
+        }
+        if (win == true)
+        {
+            if (SoundPlayer.clip.name != "Win")
+            {
+                SoundPlayer.clip = Sound;
+                SoundPlayer.Play();
+            }
+            DoorFall.speed = .5f;
         }
     }
 

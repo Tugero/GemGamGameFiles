@@ -9,8 +9,11 @@ public class BountySlots : MonoBehaviour
     public GameObject GreenGem;
     private bool locked=false;
     public GameObject Overlord;
+    public Animator Gate;
     public Animator Crusher;
     public Animator MovingSwitches;
+    public AudioSource SoundPlayer;
+    public AudioClip Sound;
     void Start()
     {
         RedGem.SetActive(false);
@@ -20,13 +23,16 @@ public class BountySlots : MonoBehaviour
         locked = false;
         Crusher.speed = 0;
         MovingSwitches.speed = 0;
+        SoundPlayer.clip = Sound;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Red Gem" && locked == false)
         {
+            Gate.speed = 1;
             RedGem.SetActive(true);
+            SoundPlayer.Play();
             locked = true;
             Crusher.speed = 1;
             MovingSwitches.speed = 1;
@@ -36,7 +42,9 @@ public class BountySlots : MonoBehaviour
         }
         if (other.tag == "Green Gem" && locked == false)
         {
+            Gate.speed = 1;
             GreenGem.SetActive(true);
+            SoundPlayer.Play();
             locked = true;
             Crusher.speed = 1;
             MovingSwitches.speed = 1;
@@ -46,7 +54,9 @@ public class BountySlots : MonoBehaviour
         }
         if (other.tag == "Blue Gem" && locked == false)
         {
+            Gate.speed = 1;
             BlueGem.SetActive(true);
+            SoundPlayer.Play();
             locked = true;
             Crusher.speed = 1;
             MovingSwitches.speed = 1;

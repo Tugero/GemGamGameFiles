@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6753125123247269030}
   m_Layer: 0
   m_Name: Yes
-  m_TagString: Green Gem
+  m_TagString: Yes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

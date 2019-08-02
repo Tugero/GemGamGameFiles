@@ -11,13 +11,24 @@ public class GridSlots : MonoBehaviour
     public LazerSelector Noble;
     private bool locked = false;
     public GameObject NextLine;
+    public GameObject Blocker;
+    public AudioSource SoundPlayer;
+    public AudioClip Sound;
+
+    private void Start()
+    {
+        SoundPlayer = this.GetComponent<AudioSource>();
+        SoundPlayer.clip = Sound;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Red Gem" && locked == false)
         {
+            Blocker.SetActive(true);
             Overlord.DarknessStart();
             RedGem.SetActive(true);
+            SoundPlayer.Play();
             locked = true;
             if (Noble.Red == true)
             {
@@ -28,8 +39,10 @@ public class GridSlots : MonoBehaviour
         }
         if (other.tag == "Green Gem" && locked == false)
         {
+            Blocker.SetActive(true);
             Overlord.DarknessStart();
             GreenGem.SetActive(true);
+            SoundPlayer.Play();
             locked = true;
             if (Noble.Green == true)
             {
@@ -40,8 +53,10 @@ public class GridSlots : MonoBehaviour
         }
         if (other.tag == "Blue Gem" && locked == false)
         {
+            Blocker.SetActive(true);
             Overlord.DarknessStart();
             BlueGem.SetActive(true);
+            SoundPlayer.Play();
             locked = true;
             if (Noble.Blue == true)
             {
