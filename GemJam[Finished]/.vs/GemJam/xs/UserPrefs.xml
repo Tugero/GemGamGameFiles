@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{4555EE83-FA37-5AA0-475E-E98B9558B3BA}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ScoreBoard.cs">
+    <Files>
+      <File FileName="Assets/Scripts/GodScript.cs" Line="94" Column="34" />
+      <File FileName="Assets/Scripts/ScoreBoard.cs" Line="78" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
